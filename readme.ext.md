@@ -147,3 +147,13 @@ Error: error:0308010C:digital envelope routines::unsupported
   code: 'ERR_OSSL_EVP_UNSUPPORTED'
 }
 ```
+
+
+### 启动后
+1. 默认两个帐号admin/admin123,ry
+2. 修改默认密码
+
+
+### 约定
+1. 单独出自有的后台工程game4dream-admin，修改ruoyi-admin的打包pom.xml，避免g4da包体翻倍
+2. 不修改ruoyi本身自有的代码，如需修改，则以重写、ext的方式修改
