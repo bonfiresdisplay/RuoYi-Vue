@@ -1,6 +1,6 @@
 # 备忘录
 
-### 环境
+## 环境
 前端
 ```
 > node -v
@@ -55,7 +55,7 @@ io_threads_active:0
 ```
 
 
-### 后端
+## 后端
 1. 修改db、redis配置
    ```
    ruoyi-admin/src/main/resources/application.yml(Line.73)
@@ -71,7 +71,7 @@ io_threads_active:0
    ruoyi-admin/src/main/java/com/ruoyi/RuoYiApplication.java
    ```
 
-### 前端
+## 前端
 ```
 > cd ./ruoyi-ui
 
@@ -149,11 +149,39 @@ Error: error:0308010C:digital envelope routines::unsupported
 ```
 
 
-### 启动后
+## 启动后
 1. 默认两个帐号admin/admin123,ry
 2. 修改默认密码
 
 
-### 约定
+## 约定
 1. 单独出自有的后台工程game4dream-admin，修改ruoyi-admin的打包pom.xml，避免g4da包体翻倍
 2. 不修改ruoyi本身自有的代码，如需修改，则以重写、ext的方式修改
+
+
+## 概念
+1. 一个公司 -> 一个产品 -> 一个后台
+2. 一个产品 -> 多发行/代理商(Agency) 例：37，腾讯，自研自发等。指产品推广发行团队
+3. 一个产品 -> 多地区(Area) 例：中国、东南亚、美洲、欧洲等。指地理位置、地区
+4. 一个产品 -> 多平台/环境(Environment) 例：iOS、安卓、微信小游戏、PC、XBox、H5。指App所在系统平台
+5. 一个产品 -> 多游戏(Game) 例：37-中国-iOS，腾讯-美洲-安卓。指一个游戏服列表
+6. 一个游戏 -> 多个包(Package) 例：腾讯-美洲-安卓-独代、腾讯-美洲-安卓-华为。 
+
+``` 
+例：
+37发行，港台地区，安卓/iOS -> Game.1
+37发行，港台地区，安卓 -> 一个Package -> Game.1
+37发行，港台地区，iOS -> 一个Package -> Game.1
+```
+
+自研自发时，为了细化导师效果，要区分导量来源渠道，客户端的一个标识位，给数据分析用
+1. 一个产品 -> 多渠道(Channel) 例：独代、AppStore、小米、华为、雷电等。自研自发时使用，独代时只有一个。指不同的App商店，导量渠道
+
+## 服群、服组、节点、逻辑服、游戏服概念
+1. 一个服群 -> 一个主服集群(一张服列表，及Server列表) -> 多个服组(Group)
+3. 一个服组(Group) -> 多台虚拟机(VirtualMachine)
+4. 一台虚拟机 -> 多个节点进程(Process) 不同Group的
+5. 一个节点 -> 多个逻辑服(Zone)
+6. 一个逻辑服 -> 多个游戏服(Server)
+
+
