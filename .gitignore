@@ -47,9 +47,9 @@ nbdist/
 !*/build/*.xml
 
 ######针对 ruoyi原有的工具，原封不动，以便持续更新ruoyi的后续版本
-./ruoyi-admin
-./ruoyi-common
-./ruoyi-framework
-./ruoyi-generator
-./ruoyi-quartz
-./ruoyi-system
+ruoyi-admin/
+ruoyi-common/
+ruoyi-framework/
+ruoyi-generator/
+ruoyi-quartz/
+ruoyi-system/
